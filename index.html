@@ -4,11 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./lib/jquery-1.10.2.min.js"></script>
+	<script src="./lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 	<script src="./index.js"></script>
+	<link href="./lib/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">	
 	<link href="./style.css" rel="stylesheet">
     <title>Exchange Rate</title>
 </head>
 <body>
-	<h1>Exchange Rate</h1>
+	<div class="container">
+		<div class="header">
+			<h4>환율 정보</h4>
+		</div>
+		<div class="row">
+			<div class="input-group">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						<table>
+							<tr>
+								<td>
+									<img src="./img/usd.png">
+									<strong style="padding-right:27px;">미국</strong>
+									<span class="caret">
+								</td>
+							</tr>
+							<tr><td>USD</td></tr>
+						</table>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">대한민국</a></li>
+						<li><a href="#">미국</a></li>
+						<li><a href="#">일본</a></li>
+						<li><a href="#">유럽연합</a></li>
+						<li><a href="#">중국</a></li>
+						<li><a href="#">호주</a></li>
+						<li><a href="#">캐나다</a></li>
+						<li><a href="#">뉴질랜드</a></li>
+					</ul>
+				</div>
+				<input type="text" class="form-control" value="0"></input>
+			</div>
+			<img src="./img/equal.png" style="display:block; margin-left:auto; margin-right:auto;">
+			<div class="input-group">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						<table>
+							<tr>
+								<td>
+									<img src="./img/krw.png">
+									<strong>대한민국</strong>
+									<span class="caret">
+								</td>
+							</tr>
+							<tr><td>KRW</td></tr>
+						</table>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#">대한민국</a></li>
+						<li><a href="#">미국</a></li>
+						<li><a href="#">일본</a></li>
+						<li><a href="#">유럽연합</a></li>
+						<li><a href="#">중국</a></li>
+						<li><a href="#">호주</a></li>
+						<li><a href="#">캐나다</a></li>
+						<li><a href="#">뉴질랜드</a></li>
+					</ul>
+				</div>
+				<input type="text" class="form-control" value="0"></input>
+			</div>			
+		</div>
+	</div>
 </body>
 </html>
