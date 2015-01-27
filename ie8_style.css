@@ -1,0 +1,31 @@
+/* 나눔고딕 폰트 */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+* { margin: 0px; padding: 0px; font-family: '나눔고딕',Nanum Gothic,'Nanum Gothic',sans-serif; }
+/* body, container, row */
+body {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #eee;
+}
+.container {
+	max-width: 750px;
+	margin: 0 auto;
+}
+.row {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #fff;
+}
+/* h4 폰트 굴기 */
+h4 {
+	font-weight: bold;
+}
+/* form-control 굵기 & 높이 */
+.form-control {
+	text-align: right; 
+	font-size: 24px; 
+	font-weight: bold; 
+	height: 55px;
+}
