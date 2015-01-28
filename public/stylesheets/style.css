@@ -49,6 +49,22 @@ h4 {
 	border: 0px solid;
 	height: 30px;
 }
+/* table list */
+.table-hover {
+	margin-top:15px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	color: #777;
+}
+/* selectDiv */
+.selectDiv {
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
 
 
 

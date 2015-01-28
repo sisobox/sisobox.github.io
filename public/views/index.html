@@ -21,7 +21,7 @@
 			<div class="inputDiv">
 				<table style="width:100%">
 					<tr>
-						<td style="width:150px;">
+						<td style="width:130px;">
 							<div class="dropdown">
 								<img id="selectFlag1" src='./images/usd.png'>
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:70%; border:0px solid;">
@@ -45,7 +45,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td id="selectEng1" class="tdCenterText" style="width:150px;">USD</td>
+						<td id="selectEng1" class="tdCenterText" style="width:130px;">USD</td>
 						<td id="subMoney1" class="tdRightText">0 달러</td>
 					</tr>				
 				</table>
@@ -54,7 +54,7 @@
 			<div class="inputDiv">
 				<table style="width:100%">
 					<tr>
-						<td style="width:150px;">
+						<td style="width:130px;">
 							<div class="dropdown">
 								<img id="selectFlag2" src='./images/krw.png'>
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:70%; border:0px solid;">
@@ -78,12 +78,64 @@
 						</td>
 					</tr>
 					<tr>
-						<td id="selectEng2" class="tdCenterText" style="width:150px;">KRW</td>
+						<td id="selectEng2" class="tdCenterText" style="width:130px;">KRW</td>
 						<td id="subMoney2" class="tdRightText">0 원</td>
 					</tr>				
 				</table>
-			</div>			
+			</div>
+			<div id="exchange_rate_list">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th style="text-align:center; border-right:1px solid #ccc;">통화명</th>
+							<th style="text-align:center;">매매기준율</th>
+							<th style="text-align:center;">전일대비</th>
+							<th style="text-align:center;">등락률</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 미국</strong> USD</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 일본</strong> JPY 100</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 유럽연합</strong> EUR</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 중국</strong> CNY</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 호주</strong> AUD</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 캐나다</strong> CAD</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 뉴질랜드</strong> NZD</td><td>0</td><td>0</td><td>0</td></tr>						
+					</tbody>
+				</table>
+			</div>
+			<div id="exchange_rate_graph" style="display:none;">
+			</div>
+			<font style="color:#777;">위 정보는 투자 참고사항이며, 오류가 있을 수 있습니다.</font></br>
+			<font style="color:#777;">기준 : 01/28 17:56 094회차</font>
+			<img src="./images/keb.png" style="width:90px; height:14px; display:block; margin-left:auto; margin-top:-20px;">
+			<div class="selectDiv">
+				<table style="width:100%;">
+					<tr>
+						<td style="width:70px;">국가별 환율</td>
+						<td>
+							<div class="btn-group dropup" style="width:100%;">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:100%;">
+									<strong>국가선택</strong>
+									<i class="glyphicon glyphicon-triangle-top pull-right"></i>
+								</button>
+								<ul class="dropdown-menu" role="menu" style="width:100%;">
+									<li><a href="">미국</a></li>
+									<li><a href="">일본</a></li>
+									<li><a href="">유럽연합</a></li>
+									<li><a href="">중국</a></li>
+									<li><a href="">호주</a></li>
+									<li><a href="">캐나다</a></li>
+									<li><a href="">뉴질랜드</a></li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</div>
 </body>
 </html>
+
+
