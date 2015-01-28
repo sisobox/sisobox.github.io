@@ -22,10 +22,38 @@ body {
 h4 {
 	font-weight: bold;
 }
-/* form-control 굵기 & 높이 */
+/* 입력창 CSS */
+.inputDiv {
+	padding-left:10px;
+	padding-right:10px;
+	display: block;
+	width: 100%;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.tdCenterText {
+	text-align: center;
+	color: #ccc;
+}
+.tdRightText {
+	border-left: 1px solid #ccc;
+	text-align: right;
+	color: #ccc;
+}
 .form-control {
 	text-align: right; 
-	font-size: 24px; 
+	font-size: 18px; 
 	font-weight: bold; 
-	height: 56px;
+	border: 0px solid;
+	height: 30px;
 }
+
+
+
+
+
+
+
+
