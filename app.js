@@ -29,9 +29,7 @@ app.post('/getData', function (req, res) {
 		if(error) {
 			res.send(400, 'error');
 		} else {
-			var strArray = stdout.split('<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table">');
-			strArray = strArray[1].split('</table></td>');
-			res.send(200, strArray[0]);  
+			res.send(200, stdout);  
 		}
 	});
 });
