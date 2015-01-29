@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./libraries/jquery-1.10.2.min.js"></script>
 	<script src="./libraries/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+	<script src="./javascripts/num-to-kor.js"></script>
 	<script src="./javascripts/index.js"></script>
 	<link href="./libraries/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">	
 	<link href="./stylesheets/style.css" rel="stylesheet">
@@ -41,7 +42,7 @@
 							</div>
 						</td>
 						<td style="border-left:1px solid #ccc;">
-							<input id="titleMoney1" type="text" class="form-control" value="0" onkeypress="if(event.keyCode<45||event.keyCode>57)event.returnValue=false;" onkeyup="sum();" style="IME-MODE:disabled;">
+							<input id="titleMoney1" type="text" class="form-control" value="0" onkeypress="if(event.keyCode<45||event.keyCode>57)event.returnValue=false;" onkeyup="sum(2);" style="IME-MODE:disabled;">
 						</td>
 					</tr>
 					<tr>
@@ -74,7 +75,7 @@
 							</div>
 						</td>
 						<td style="border-left:1px solid #ccc;">
-							<input id="titleMoney2" type="text" class="form-control" value="0.00" onkeypress="if(event.keyCode<45||event.keyCode>57)event.returnValue=false;" onkeyup="sum();" style="IME-MODE:disabled;">
+							<input id="titleMoney2" type="text" class="form-control" value="0.00" onkeypress="if(event.keyCode<45||event.keyCode>57)event.returnValue=false;" onkeyup="sum(1);" style="IME-MODE:disabled;">
 						</td>
 					</tr>
 					<tr>
