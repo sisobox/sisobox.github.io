@@ -130,6 +130,28 @@ function uncomma(str) {
     return str.replace(/[^\d]+/g, '');
 }
 
+function onDetail(num) {
+	$("#selectFlag1").attr("src", "./images/" + flagENG[num] + ".png");
+	$("#selectBtnText1").text(flagKOR[num]);
+	$("#selectEng1").text(flagENG[num].toUpperCase());
+	$("#selectFlag2").attr("src", "./images/" + flagENG[0] + ".png");
+	$("#selectBtnText2").text(flagKOR[0]);
+	$("#selectEng2").text(flagENG[0].toUpperCase());
+	$("#selectBtnText3").text(flagKOR[num] + " " + flagENG[num].toUpperCase());
+	
+	oneFlag = flagNum[num];
+	twoFlag = flagNum[0];
+	if(num == 2) {
+		document.getElementById("titleMoney1").value = 100;
+	} else {
+		document.getElementById("titleMoney1").value = 1;
+	}
+	sum(2);
+	
+	$("#exchange_rate_list").hide();
+	$("#exchange_rate_graph").show();
+}
+
 
 
 

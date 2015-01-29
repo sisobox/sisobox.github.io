@@ -95,13 +95,13 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 미국</strong> USD</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 일본</strong> JPY 100</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 유럽연합</strong> EUR</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 중국</strong> CNY</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 호주</strong> AUD</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 캐나다</strong> CAD</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc;"><strong style="color:#428bca;"> 뉴질랜드</strong> NZD</td><td>0</td><td>0</td><td>0</td></tr>						
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(1);"><strong style="color:#428bca;"> 미국</strong> USD</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(2);"><strong style="color:#428bca;"> 일본</strong> JPY 100</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(3);"><strong style="color:#428bca;"> 유럽연합</strong> EUR</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(4);"><strong style="color:#428bca;"> 중국</strong> CNY</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(5);"><strong style="color:#428bca;"> 호주</strong> AUD</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(6);"><strong style="color:#428bca;"> 캐나다</strong> CAD</td><td>0</td><td>0</td><td>0</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(7);"><strong style="color:#428bca;"> 뉴질랜드</strong> NZD</td><td>0</td><td>0</td><td>0</td></tr>						
 					</tbody>
 				</table>
 			</div>
@@ -117,17 +117,17 @@
 						<td>
 							<div class="btn-group dropup" style="width:100%;">
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:100%;">
-									<strong>국가선택</strong>
+									<strong id="selectBtnText3">국가선택</strong>
 									<i class="glyphicon glyphicon-triangle-top pull-right"></i>
 								</button>
 								<ul class="dropdown-menu" role="menu" style="width:100%;">
-									<li><a href="">미국</a></li>
-									<li><a href="">일본</a></li>
-									<li><a href="">유럽연합</a></li>
-									<li><a href="">중국</a></li>
-									<li><a href="">호주</a></li>
-									<li><a href="">캐나다</a></li>
-									<li><a href="">뉴질랜드</a></li>
+									<li><a href="javascript:onDetail(1);">미국 USD</a></li>
+									<li><a href="javascript:onDetail(2);">일본 JPY</a></li>
+									<li><a href="javascript:onDetail(3);">유럽연합 EUR</a></li>
+									<li><a href="javascript:onDetail(4);">중국 CNY</a></li>
+									<li><a href="javascript:onDetail(5);">호주 AUD</a></li>
+									<li><a href="javascript:onDetail(6);">캐나다 CAD</a></li>
+									<li><a href="javascript:onDetail(7);">뉴질랜드 NZD</a></li>
 								</ul>
 							</div>
 						</td>
