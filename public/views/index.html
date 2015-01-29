@@ -84,6 +84,7 @@
 					</tr>				
 				</table>
 			</div>
+			<!-- 환율 리스트 -->
 			<div id="exchange_rate_list">
 				<table id="exchange_rate_list" class="table table-hover">
 					<thead>
@@ -95,16 +96,17 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(1);"><strong style="color:#428bca;"> 미국</strong> USD</td><td>-</td><td>-</td><td>-</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(2);"><strong style="color:#428bca;"> 일본</strong> JPY 100</td><td>-</td><td>-</td><td>-</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(3);"><strong style="color:#428bca;"> 유럽연합</strong> EUR</td><td>-</td><td>-</td><td>-</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(4);"><strong style="color:#428bca;"> 중국</strong> CNY</td><td>-</td><td>-</td><td>-</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(5);"><strong style="color:#428bca;"> 호주</strong> AUD</td><td>-</td><td>-</td><td>-</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(6);"><strong style="color:#428bca;"> 캐나다</strong> CAD</td><td>-</td><td>-</td><td>-</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(7);"><strong style="color:#428bca;"> 뉴질랜드</strong> NZD</td><td>-</td><td>-</td><td>-</td></tr>						
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(1);"><strong style="color:#428bca;"> 미국</strong> USD</td><td>-</td><td id="td0">-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(2);"><strong style="color:#428bca;"> 일본</strong> JPY 100</td><td>-</td><td id="td1">-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(3);"><strong style="color:#428bca;"> 유럽연합</strong> EUR</td><td>-</td><td id="td2">-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(4);"><strong style="color:#428bca;"> 중국</strong> CNY</td><td>-</td><td id="td3">-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(5);"><strong style="color:#428bca;"> 호주</strong> AUD</td><td>-</td><td id="td4">-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(6);"><strong style="color:#428bca;"> 캐나다</strong> CAD</td><td>-</td><td id="td5">-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(7);"><strong style="color:#428bca;"> 뉴질랜드</strong> NZD</td><td>-</td><td id="td6">-</td><td>-</td></tr>						
 					</tbody>
 				</table>
 			</div>
+			<!-- 환율 상세정보 -->
 			<div id="exchange_rate_graph" style="display:none;">
 				<div style="text-align:center; border-top:1px solid #ccc; padding-top:10px; padding-bottom:10px; margin-top:10px;">
 					<img id="detailFlag" src="">

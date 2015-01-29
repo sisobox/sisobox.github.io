@@ -33,29 +33,105 @@ $(document).ready(function() {
 });	
 
 function init() {
-	basicRate.push(1);
-	$("#exchange_rate_table tr").each(function() {
-		basicRate.push($(this).find("td").eq(6).text());
+	deferred = $.post("/yesterdayData", "");
+	deferred.success(function(success) {
+		//usd, jpy, eur, cny, aud, cad, nzd
+		var yesterArray = success.split(",");
+		basicRate.push(1);
+		$("#exchange_rate_table tr").each(function() {
+			basicRate.push($(this).find("td").eq(6).text());
+		});
+		var i = 0;
+		//환율 리스트를 순차적으로 돌면서 값을 넣어주는 코드
+		$("#exchange_rate_list tbody tr").each(function() {
+			if(i==0) {
+				$(this).find("td").eq(1).text(comma(basicRate[3]));
+				$(this).find("td").eq(3).text(((basicRate[3]-yesterArray[0])/basicRate[3]*100).toFixed(2)+"%");
+				if(basicRate[3]-yesterArray[0] > 0) {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[3]-yesterArray[0]).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#d9534f");
+					$(this).find("td").eq(3).css("color", "#d9534f");
+				} else {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[3]-yesterArray[0])).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#428bca");
+					$(this).find("td").eq(3).css("color", "#428bca");
+				}
+			} else if(i==1) {
+				$(this).find("td").eq(1).text(comma(basicRate[4]));
+				$(this).find("td").eq(3).text(((basicRate[4]-yesterArray[1])/basicRate[4]*100).toFixed(2)+"%");
+				if(basicRate[4]-yesterArray[1] > 0) {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[4]-yesterArray[1]).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#d9534f");
+					$(this).find("td").eq(3).css("color", "#d9534f");
+				} else {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[4]-yesterArray[1])).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#428bca");
+					$(this).find("td").eq(3).css("color", "#428bca");
+				}				
+			} else if(i==2) {
+				$(this).find("td").eq(1).text(comma(basicRate[5]));
+				$(this).find("td").eq(3).text(((basicRate[5]-yesterArray[2])/basicRate[5]*100).toFixed(2)+"%");
+				if(basicRate[5]-yesterArray[2] > 0) {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[5]-yesterArray[2]).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#d9534f");
+					$(this).find("td").eq(3).css("color", "#d9534f");				
+				} else {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[5]-yesterArray[2])).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#428bca");
+					$(this).find("td").eq(3).css("color", "#428bca");				
+				}
+			} else if(i==3) {
+				$(this).find("td").eq(1).text(comma(basicRate[6]));
+				$(this).find("td").eq(3).text(((basicRate[6]-yesterArray[3])/basicRate[6]*100).toFixed(2)+"%");
+				if(basicRate[6]-yesterArray[3] > 0) {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[6]-yesterArray[3]).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#d9534f");
+					$(this).find("td").eq(3).css("color", "#d9534f");					
+				} else {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[6]-yesterArray[3])).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#428bca");
+					$(this).find("td").eq(3).css("color", "#428bca");					
+				}
+			} else if(i==4) {
+				$(this).find("td").eq(1).text(comma(basicRate[10]));
+				$(this).find("td").eq(3).text(((basicRate[10]-yesterArray[4])/basicRate[10]*100).toFixed(2)+"%");
+				if(basicRate[10]-yesterArray[4] > 0) {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[10]-yesterArray[4]).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#d9534f");
+					$(this).find("td").eq(3).css("color", "#d9534f");				
+				} else {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[10]-yesterArray[4])).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#428bca");
+					$(this).find("td").eq(3).css("color", "#428bca");				
+				}				
+			} else if(i==5) {
+				$(this).find("td").eq(1).text(comma(basicRate[9]));
+				$(this).find("td").eq(3).text(((basicRate[9]-yesterArray[5])/basicRate[9]*100).toFixed(2)+"%");
+				if(basicRate[9]-yesterArray[5] > 0) {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[9]-yesterArray[5]).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#d9534f");
+					$(this).find("td").eq(3).css("color", "#d9534f");				
+				} else {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[9]-yesterArray[5])).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#428bca");
+					$(this).find("td").eq(3).css("color", "#428bca");				
+				}				
+			} else if(i==6) {
+				$(this).find("td").eq(1).text(comma(basicRate[11]));
+				$(this).find("td").eq(3).text(((basicRate[11]-yesterArray[6])/basicRate[11]*100).toFixed(2)+"%");
+				if(basicRate[11]-yesterArray[6] > 0) {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[11]-yesterArray[6]).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#d9534f");
+					$(this).find("td").eq(3).css("color", "#d9534f");				
+				} else {
+					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[11]-yesterArray[6])).toFixed(2);
+					$(this).find("td").eq(2).css("color", "#428bca");
+					$(this).find("td").eq(3).css("color", "#428bca");				
+				}				
+			}
+			i = i + 1;
+		});			
 	});
-	var i = 0;
-	$("#exchange_rate_list tbody tr").each(function() {
-		if(i==0) {
-			$(this).find("td").eq(1).text(comma(basicRate[3]));
-		} else if(i==1) {
-			$(this).find("td").eq(1).text(comma(basicRate[4]));
-		} else if(i==2) {
-			$(this).find("td").eq(1).text(comma(basicRate[5]));
-		} else if(i==3) {
-			$(this).find("td").eq(1).text(comma(basicRate[6]));
-		} else if(i==4) {
-			$(this).find("td").eq(1).text(comma(basicRate[10]));
-		} else if(i==5) {
-			$(this).find("td").eq(1).text(comma(basicRate[9]));
-		} else if(i==6) {
-			$(this).find("td").eq(1).text(comma(basicRate[11]));
-		}
-		i = i + 1;
-	});	
 }
 
 function changeFlag(input, flag) {
@@ -129,7 +205,7 @@ function uncomma(str) {
     str = String(str);
     return str.replace(/[^\d]+/g, '');
 }
-
+// 환율 상세정보 보여주는 함수
 function onDetail(num) {
 	$("#selectFlag1").attr("src", "./images/" + flagENG[num] + ".png");
 	$("#selectBtnText1").text(flagKOR[num]);
@@ -161,7 +237,7 @@ function onDetail(num) {
 	$("#exchange_rate_list").hide();
 	$("#exchange_rate_graph").show();
 }
-
+// 3개월, 1년, 3년 버튼 활성화 함수
 function activeBtn(num) {
 	$("#activeBtn1").removeClass("active");
 	$("#activeBtn2").removeClass("active");
