@@ -8,6 +8,7 @@ var flagENG = ["krw", "usd", "jpy", "eur", "cny", "aud", "cad", "nzd"];
 var flagNum = [0, 3, 4, 5, 6, 10, 9, 11];
 var flagBill = ["원", "", "", "달러", "엔", "유로", "위안", "", "", "달러", "달러", "달러"];
 var basicRate = []; //매매기준율
+var fluctuationColor = []; //등락률색상
 var oneFlag = 3; //첫번째 선택된 나라
 var twoFlag = 0; //두번째 선택된 나라
 var resultSum = 2; //계산 결과 위치
@@ -49,84 +50,112 @@ function init() {
 				$(this).find("td").eq(3).text(((basicRate[3]-yesterArray[0])/basicRate[3]*100).toFixed(2)+"%");
 				if(basicRate[3]-yesterArray[0] > 0) {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[3]-yesterArray[0]).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#d9534f");
 					$(this).find("td").eq(2).css("color", "#d9534f");
 					$(this).find("td").eq(3).css("color", "#d9534f");
+					fluctuationColor.push("red");
 				} else {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[3]-yesterArray[0])).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#428bca");
 					$(this).find("td").eq(2).css("color", "#428bca");
 					$(this).find("td").eq(3).css("color", "#428bca");
+					fluctuationColor.push("blue");
 				}
 			} else if(i==1) {
 				$(this).find("td").eq(1).text(comma(basicRate[4]));
 				$(this).find("td").eq(3).text(((basicRate[4]-yesterArray[1])/basicRate[4]*100).toFixed(2)+"%");
 				if(basicRate[4]-yesterArray[1] > 0) {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[4]-yesterArray[1]).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#d9534f");
 					$(this).find("td").eq(2).css("color", "#d9534f");
 					$(this).find("td").eq(3).css("color", "#d9534f");
+					fluctuationColor.push("red");
 				} else {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[4]-yesterArray[1])).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#428bca");
 					$(this).find("td").eq(2).css("color", "#428bca");
 					$(this).find("td").eq(3).css("color", "#428bca");
+					fluctuationColor.push("blue");
 				}				
 			} else if(i==2) {
 				$(this).find("td").eq(1).text(comma(basicRate[5]));
 				$(this).find("td").eq(3).text(((basicRate[5]-yesterArray[2])/basicRate[5]*100).toFixed(2)+"%");
 				if(basicRate[5]-yesterArray[2] > 0) {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[5]-yesterArray[2]).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#d9534f");
 					$(this).find("td").eq(2).css("color", "#d9534f");
-					$(this).find("td").eq(3).css("color", "#d9534f");				
+					$(this).find("td").eq(3).css("color", "#d9534f");
+					fluctuationColor.push("red");					
 				} else {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[5]-yesterArray[2])).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#428bca");
 					$(this).find("td").eq(2).css("color", "#428bca");
-					$(this).find("td").eq(3).css("color", "#428bca");				
+					$(this).find("td").eq(3).css("color", "#428bca");
+					fluctuationColor.push("blue");
 				}
 			} else if(i==3) {
 				$(this).find("td").eq(1).text(comma(basicRate[6]));
 				$(this).find("td").eq(3).text(((basicRate[6]-yesterArray[3])/basicRate[6]*100).toFixed(2)+"%");
 				if(basicRate[6]-yesterArray[3] > 0) {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[6]-yesterArray[3]).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#d9534f");
 					$(this).find("td").eq(2).css("color", "#d9534f");
-					$(this).find("td").eq(3).css("color", "#d9534f");					
+					$(this).find("td").eq(3).css("color", "#d9534f");
+					fluctuationColor.push("red");
 				} else {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[6]-yesterArray[3])).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#428bca");
 					$(this).find("td").eq(2).css("color", "#428bca");
-					$(this).find("td").eq(3).css("color", "#428bca");					
+					$(this).find("td").eq(3).css("color", "#428bca");	
+					fluctuationColor.push("blue");
 				}
 			} else if(i==4) {
 				$(this).find("td").eq(1).text(comma(basicRate[10]));
 				$(this).find("td").eq(3).text(((basicRate[10]-yesterArray[4])/basicRate[10]*100).toFixed(2)+"%");
 				if(basicRate[10]-yesterArray[4] > 0) {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[10]-yesterArray[4]).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#d9534f");
 					$(this).find("td").eq(2).css("color", "#d9534f");
-					$(this).find("td").eq(3).css("color", "#d9534f");				
+					$(this).find("td").eq(3).css("color", "#d9534f");
+					fluctuationColor.push("red");
 				} else {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[10]-yesterArray[4])).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#428bca");
 					$(this).find("td").eq(2).css("color", "#428bca");
-					$(this).find("td").eq(3).css("color", "#428bca");				
+					$(this).find("td").eq(3).css("color", "#428bca");
+					fluctuationColor.push("blue");
 				}				
 			} else if(i==5) {
 				$(this).find("td").eq(1).text(comma(basicRate[9]));
 				$(this).find("td").eq(3).text(((basicRate[9]-yesterArray[5])/basicRate[9]*100).toFixed(2)+"%");
 				if(basicRate[9]-yesterArray[5] > 0) {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[9]-yesterArray[5]).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#d9534f");
 					$(this).find("td").eq(2).css("color", "#d9534f");
-					$(this).find("td").eq(3).css("color", "#d9534f");				
+					$(this).find("td").eq(3).css("color", "#d9534f");
+					fluctuationColor.push("red");
 				} else {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[9]-yesterArray[5])).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#428bca");
 					$(this).find("td").eq(2).css("color", "#428bca");
-					$(this).find("td").eq(3).css("color", "#428bca");				
+					$(this).find("td").eq(3).css("color", "#428bca");
+					fluctuationColor.push("blue");
 				}				
 			} else if(i==6) {
 				$(this).find("td").eq(1).text(comma(basicRate[11]));
 				$(this).find("td").eq(3).text(((basicRate[11]-yesterArray[6])/basicRate[11]*100).toFixed(2)+"%");
 				if(basicRate[11]-yesterArray[6] > 0) {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-top'></i> " + (basicRate[11]-yesterArray[6]).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#d9534f");
 					$(this).find("td").eq(2).css("color", "#d9534f");
-					$(this).find("td").eq(3).css("color", "#d9534f");				
+					$(this).find("td").eq(3).css("color", "#d9534f");
+					fluctuationColor.push("red");
 				} else {
 					document.getElementById("td"+i).innerHTML = "<i class='glyphicon glyphicon-triangle-bottom'></i> " + (Math.abs(basicRate[11]-yesterArray[6])).toFixed(2);
+					$(this).find("td").eq(1).css("color", "#428bca");
 					$(this).find("td").eq(2).css("color", "#428bca");
-					$(this).find("td").eq(3).css("color", "#428bca");				
+					$(this).find("td").eq(3).css("color", "#428bca");
+					fluctuationColor.push("blue");
 				}				
 			}
 			i = i + 1;
@@ -227,7 +256,16 @@ function onDetail(num) {
 	$("#detailFlag").attr("src", "./images/" + flagENG[num] + ".png");
 	$("#detailFlagKorText").text(flagKOR[num]);
 	$("#detailFlagEngText").text(flagENG[num].toUpperCase());
-	$("#detailFlagRateText").text(basicRate[oneFlag]);
+	var rate = $("#exchange_rate_list").find("tr").eq(num).find("td").eq(1).text();
+	var yester = $("#exchange_rate_list").find("tr").eq(num).find("td").eq(2).text();
+	var fluctuation = $("#exchange_rate_list").find("tr").eq(num).find("td").eq(3).text();
+	var text = "";
+	if(fluctuationColor[num-1] == "red") {
+		text = "<font style='font-size:24px; font-weight:bold; color:#d9534f;'>" + rate + "</font><font style='font-weight:bold; color:#d9534f; padding-left:10px; padding-right:10px;'><i class='glyphicon glyphicon-triangle-top'></i>" + yester + "</font><font style='font-weight:bold; color:#d9534f;'>" + fluctuation + "</font>";
+	} else {
+		text = "<font style='font-size:24px; font-weight:bold; color:#428bca;'>" + rate + "</font><font style='font-weight:bold; color:#428bca; padding-left:10px; padding-right:10px;'><i class='glyphicon glyphicon-triangle-bottom'></i>" + yester + "</font><font style='font-weight:bold; color:#428bca;'>" + fluctuation + "</font>";
+	}
+	document.getElementById("detailFlagRate").innerHTML = text;
 	$("#buyMoneyText").text(comma($("#exchange_rate_table").find("tr").eq(oneFlag-1).find("td").eq(1).text()));
 	$("#sellMoneyText").text(comma($("#exchange_rate_table").find("tr").eq(oneFlag-1).find("td").eq(2).text()));
 	$("#sendMoneyText").text(comma($("#exchange_rate_table").find("tr").eq(oneFlag-1).find("td").eq(3).text()));
@@ -244,15 +282,4 @@ function activeBtn(num) {
 	$("#activeBtn3").removeClass("active");
 	$("#activeBtn" + num).addClass("active");
 }
-
-
-
-
-
-
-
-
-
-
-
 
