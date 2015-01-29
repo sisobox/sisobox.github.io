@@ -24,7 +24,7 @@
 					<tr>
 						<td style="width:130px;">
 							<div class="dropdown">
-								<img id="selectFlag1" src='./images/usd.png'>
+								<img id="selectFlag1" src="./images/usd.png">
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:70%; border:0px solid;">
 									<strong id="selectBtnText1">미국</strong>
 									<i class="glyphicon glyphicon-triangle-bottom pull-right"></i>
@@ -57,7 +57,7 @@
 					<tr>
 						<td style="width:130px;">
 							<div class="dropdown">
-								<img id="selectFlag2" src='./images/krw.png'>
+								<img id="selectFlag2" src="./images/krw.png">
 								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:70%; border:0px solid;">
 									<strong id="selectBtnText2">대한민국</strong>
 									<i class="glyphicon glyphicon-triangle-bottom pull-right"></i>
@@ -95,17 +95,48 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(1);"><strong style="color:#428bca;"> 미국</strong> USD</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(2);"><strong style="color:#428bca;"> 일본</strong> JPY 100</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(3);"><strong style="color:#428bca;"> 유럽연합</strong> EUR</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(4);"><strong style="color:#428bca;"> 중국</strong> CNY</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(5);"><strong style="color:#428bca;"> 호주</strong> AUD</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(6);"><strong style="color:#428bca;"> 캐나다</strong> CAD</td><td>0</td><td>0</td><td>0</td></tr>
-						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(7);"><strong style="color:#428bca;"> 뉴질랜드</strong> NZD</td><td>0</td><td>0</td><td>0</td></tr>						
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(1);"><strong style="color:#428bca;"> 미국</strong> USD</td><td>-</td><td>-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(2);"><strong style="color:#428bca;"> 일본</strong> JPY 100</td><td>-</td><td>-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(3);"><strong style="color:#428bca;"> 유럽연합</strong> EUR</td><td>-</td><td>-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(4);"><strong style="color:#428bca;"> 중국</strong> CNY</td><td>-</td><td>-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(5);"><strong style="color:#428bca;"> 호주</strong> AUD</td><td>-</td><td>-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(6);"><strong style="color:#428bca;"> 캐나다</strong> CAD</td><td>-</td><td>-</td><td>-</td></tr>
+						<tr><td style="text-align:left; border-right:1px solid #ccc; cursor:pointer;" onclick="onDetail(7);"><strong style="color:#428bca;"> 뉴질랜드</strong> NZD</td><td>-</td><td>-</td><td>-</td></tr>						
 					</tbody>
 				</table>
 			</div>
 			<div id="exchange_rate_graph" style="display:none;">
+				<div style="text-align:center; border-top:1px solid #ccc; padding-top:10px; padding-bottom:10px; margin-top:10px;">
+					<img id="detailFlag" src="">
+					<strong id="detailFlagKorText"></strong>
+					<strong id="detailFlagEngText"></strong>
+					<h4 id="detailFlagRateText"></h4>
+					<img src="./images/graph.png">
+				</div>
+				<div class="btn-group btn-group-justified" role="group">
+					<div class="btn-group" role="group"><button id="activeBtn1" type="button" class="btn btn-default active" onclick="activeBtn(1);">3개월</button></div>
+					<div class="btn-group" role="group"><button id="activeBtn2" type="button" class="btn btn-default" onclick="activeBtn(2);">1년</button></div>
+					<div class="btn-group" role="group"><button id="activeBtn3" type="button" class="btn btn-default" onclick="activeBtn(3);">3년</button></div>
+				</div>
+				<table id="exchange_rate_list" class="table" style="margin-top:10px; border-top:1px solid #ccc; border-bottom:1px solid #ccc;">
+					<tr>
+						<td style="width:25%; color:#777;">현찰 살때</td>
+						<td style="width:25%; border-right:1px solid #ccc; text-align:right;"><strong id="buyMoneyText">-</strong></td>
+						<td style="width:25%; color:#777;">송금 보낼때</td>
+						<td style="width:25%; text-align:right;"><strong id="sendMoneyText">-</strong></td>
+					</tr>
+					<tr>
+						<td style="width:25%; color:#777;">현찰 팔때</td>
+						<td style="width:25%; border-right:1px solid #ccc; text-align:right;"><strong id="sellMoneyText">-</strong></td>
+						<td style="width:25%; color:#777;">송금 받을때</td>
+						<td style="width:25%; text-align:right;"><strong id="receiveMoneyText">-</strong></td>
+					</tr>
+					<tr>
+						<td style="width:25%; color:#777;">TC 살때</td>
+						<td style="width:25%; border-right:1px solid #ccc; text-align:right;"><strong id="tcMoneyText">-</strong></td>
+						<td style="width:25%; color:#777;">외화수표 팔때</td>
+						<td style="width:25%; text-align:right;"><strong id="checkMoneyText">-</strong></td></tr>					
+				</table>
 			</div>
 			<font style="color:#777;">위 정보는 투자 참고사항이며, 오류가 있을 수 있습니다.</font></br>
 			<font id="criteriaText" style="color:#777;"></font>

@@ -1,6 +1,6 @@
 /*
 	데이터 뽑아오는 기준
-	6매매기준율
+	1현찰살때 2현찰팔때 3송금보낼때 4송금받을때 5수표팔때 6매매기준율
 	0한국 3미국 4일본 5유럽연합 6중국 9캐나다 10호주 11뉴질랜드
 */
 var flagKOR = ["대한민국", "미국", "일본", "유럽연합", "중국", "호주", "캐나다", "뉴질랜드"];
@@ -119,12 +119,12 @@ function subMoneyText(oneMoney, twoMoney) {
 	$("#subMoney1").text(comma(oneMoney) + " " + flagBill[oneFlag]);
 	$("#subMoney2").text(comma(twoMoney) + " " + flagBill[twoFlag]);
 }
-
+// comma 콤마 추가 함수
 function comma(str) {
     str = String(str);
     return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
 }
-
+// uncomma 콤마 삭제 함수
 function uncomma(str) {
     str = String(str);
     return str.replace(/[^\d]+/g, '');
@@ -148,8 +148,25 @@ function onDetail(num) {
 	}
 	sum(2);
 	
+	$("#detailFlag").attr("src", "./images/" + flagENG[num] + ".png");
+	$("#detailFlagKorText").text(flagKOR[num]);
+	$("#detailFlagEngText").text(flagENG[num].toUpperCase());
+	$("#detailFlagRateText").text(basicRate[oneFlag]);
+	$("#buyMoneyText").text(comma($("#exchange_rate_table").find("tr").eq(oneFlag-1).find("td").eq(1).text()));
+	$("#sellMoneyText").text(comma($("#exchange_rate_table").find("tr").eq(oneFlag-1).find("td").eq(2).text()));
+	$("#sendMoneyText").text(comma($("#exchange_rate_table").find("tr").eq(oneFlag-1).find("td").eq(3).text()));
+	$("#receiveMoneyText").text(comma($("#exchange_rate_table").find("tr").eq(oneFlag-1).find("td").eq(4).text()));
+	$("#checkMoneyText").text(comma($("#exchange_rate_table").find("tr").eq(oneFlag-1).find("td").eq(5).text()));
+
 	$("#exchange_rate_list").hide();
 	$("#exchange_rate_graph").show();
+}
+
+function activeBtn(num) {
+	$("#activeBtn1").removeClass("active");
+	$("#activeBtn2").removeClass("active");
+	$("#activeBtn3").removeClass("active");
+	$("#activeBtn" + num).addClass("active");
 }
 
 
